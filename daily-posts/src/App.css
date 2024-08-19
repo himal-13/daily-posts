@@ -1,0 +1,45 @@
+.container{
+    width: 100vw;
+    margin: 0 auto;
+}
+nav h3{
+    margin: 1rem 0;
+    padding: 10px 16px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    cursor: pointer;
+    font-size: 2rem;
+    opacity: .65;
+}
+nav h3:hover{
+    color: blue;
+    opacity: 1;
+
+
+}
+.home-nav{
+    background-color: rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(10px); /* Adjust the blur value as needed */
+    backdrop-filter: blur(10px); 
+}
+.active-nav h3{
+    color: blue;
+    opacity: 1;
+}
+.searched-items::-webkit-scrollbar{
+    display: none;
+}
+
+@media screen and (max-width:900px){
+
+    nav h3 span{
+        display: none;
+    }
+    
+}
+@media screen and (max-width:600px) {
+    
+}

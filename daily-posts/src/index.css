@@ -6,3 +6,6 @@
   padding: 0;
   margin: 0;
 }
+input{
+  border: 2px solid gray;
+}
