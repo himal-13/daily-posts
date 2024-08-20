@@ -26,7 +26,6 @@ const UserPage = () => {
 
         loadCurrentUser()
 
-        // if()
 
     },[likePost,params.userName,followList])
 

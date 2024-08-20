@@ -1,11 +1,7 @@
-import { useState } from "react"
 import AsideComp from "../components/AsideComp"
 import Navbar from "../components/Navbar"
-import { useUserContext } from "../utils/Context"
 
 const Explore = () => {
-    const{usersData} = useUserContext()
-    // const[previewPeople,setPreviewPeople] = useState()
   return (
     
     <div className="flex justify-center sm:justify-start ">
