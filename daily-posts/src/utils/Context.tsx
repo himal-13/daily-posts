@@ -7,6 +7,7 @@ import { usersDetails } from "./UserDetails"
 interface UsersContextType{
     usersData:User[],
     currentUser:User,
+    followList:User[]
     getUsersById:(id:number)=>User|undefined,
     createPost:(content:string)=>void,
     editPost: ( postId: number, newContent: string) => void;
@@ -14,7 +15,9 @@ interface UsersContextType{
     updateUserName: ( newName: string) => void
     likePost:(userId:number,postId:number)=>void
     updateName:(newName:string)=>void,
-    updateBio:(newBio:string)=>void
+    updateBio:(newBio:string)=>void,
+    addToFollowList:(userId:number)=>void,
+    removeFromFollowList:(userId:number)=>void
 
 }
 
@@ -23,6 +26,17 @@ const UsersContext = createContext<UsersContextType | undefined>(undefined)
 export const UserProvider = ({children}:{children:ReactNode}) => {
     const[usersData,setUsersData]=useState<User[]>([defaultAdminUser,...usersDetails])
     const[currentUser,setCurrentUser] = useState<User>(defaultAdminUser)
+    const[followList,setFollowList]= useState<User[]>([usersData[Math.ceil(Math.random() *19)]])
+
+    const addToFollowList=(userId:number)=>{
+        const user = usersData.find(user=>user.id===userId)
+        if(user)
+        setFollowList([user,...followList])
+
+    }
+    const removeFromFollowList=(userId:number)=>{
+        setFollowList(followList.filter(user=>user.id !== userId))
+    }
 
 
 
@@ -144,7 +158,7 @@ export const UserProvider = ({children}:{children:ReactNode}) => {
 
         
     return(
-        <UsersContext.Provider value={{usersData,getUsersById,createPost,editPost,deletePost,updateUserName,likePost,currentUser,updateName,updateBio}}>
+        <UsersContext.Provider value={{usersData,getUsersById,createPost,editPost,deletePost,updateUserName,likePost,currentUser,updateName,updateBio,removeFromFollowList,addToFollowList,followList}}>
             {children}
 
         </UsersContext.Provider>

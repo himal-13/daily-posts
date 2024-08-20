@@ -21,8 +21,8 @@ const Navbar = () => {
             <h1 className="text-4xl md:text-5xl flex justify-center">D<span className="text-red-600">P</span></h1>
             <NavLink to='/' className={({ isActive }) => (isActive ? 'active-nav' : '')}><h3><FontAwesomeIcon icon={faHome}/><span>Home</span></h3></NavLink>
             <NavLink to='/profile' className={({ isActive }) => (isActive ? 'active-nav' : '')}><h3 ><FontAwesomeIcon icon={faUser}/><span>Profile</span></h3></NavLink>
-            <NavLink to='/explore'className={({ isActive }) => (isActive ? 'active-nav' : '')}><h3><FontAwesomeIcon icon={faSearchPlus}/><span>Explore</span></h3></NavLink>
-            <h3><FontAwesomeIcon icon={faGear}/><span>Settings</span></h3>
+            {/* <NavLink to='/explore'className={({ isActive }) => (isActive ? 'active-nav' : '')}><h3><FontAwesomeIcon icon={faSearchPlus}/><span>Explore</span></h3></NavLink>
+            <h3><FontAwesomeIcon icon={faGear}/><span>Settings</span></h3> */}
             </div>
         </nav>
         </>

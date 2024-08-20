@@ -36,7 +36,7 @@ export const defaultAdminUser: User = {
     followersCount: 1000,
     followingCount: 100,
     posts:[
-        { postId: 2002, content: "Welcome to Daily post this is a demo post.", likes: 400, comments: 50, createdAt: "2024-08-06T10:00:00Z" }
+        { postId: 2005, content: "Welcome to Daily post this is a demo post.", likes: 400, comments: 50, createdAt: "2024-08-06T10:00:00Z" }
     ]
 
   };

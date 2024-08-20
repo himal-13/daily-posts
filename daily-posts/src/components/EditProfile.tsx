@@ -85,8 +85,8 @@ import { useUserContext } from '../utils/Context';
                 ref={descriptionElementRef}
                 tabIndex={-1}
             >
-                <div className="my-2 "><label htmlFor="name">Name</label> <br/><input type='text' placeholder='name' value={name} onChange={(e)=>setName(e.target.value)} maxLength={15} id='name' className='px-4 py-2 rounded-xl' /></div>
-                <div className="my-2"><label htmlFor="username">UserName</label>  <br/><input type='text' placeholder='username' id='username' value={userName} onChange={(e)=>setUserName(e.target.value)} maxLength={10} className='px-4 py-2 rounded-xl' /></div>
+                <div className="my-2 "><label htmlFor="name">name</label> <br/><input type='text' placeholder='name' value={name} onChange={(e)=>setName(e.target.value)} maxLength={15} id='name' className='px-4 py-2 rounded-xl' /></div>
+                <div className="my-2"><label htmlFor="username">user name</label>  <br/><input type='text' placeholder='username' id='username' value={userName} onChange={(e)=>setUserName(e.target.value)} maxLength={10} className='px-4 py-2 rounded-xl' /></div>
                 <div className="my-2"><label htmlFor="bio">Bio</label>  <br/><input type='text' placeholder='bio' id='bio' value={bio} onChange={(e)=>setBio(e.target.value)} maxLength={30} className='px-4 py-2 rounded-xl' /></div>
                 
                 

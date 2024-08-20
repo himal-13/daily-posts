@@ -3,13 +3,13 @@
     import Menu from '@mui/material/Menu';
     import MenuItem from '@mui/material/MenuItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEdit, faEllipsis, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faEllipsis,  faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
 import { useUserContext } from '../utils/Context';
-import { Post } from '../utils/interfaces';
+import { Post,} from '../utils/interfaces';
 
 interface PostMenuProps{
-    postId:number
+    postId:number,
 }
 
    function PostMenu({postId}:PostMenuProps) {
@@ -19,6 +19,7 @@ interface PostMenuProps{
     const [editingValue,setEditingValue] = React.useState('')
     const{currentUser,editPost,deletePost} = useUserContext()
     const[post,setPost]= React.useState<Post>()
+
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         setAnchorEl(event.currentTarget);
     };
@@ -32,13 +33,7 @@ interface PostMenuProps{
         setOpenDialog(true)
 
     }
-    const handleDeleteClick=()=>{
-        handleClose()
-        deletePost(post!.postId)
-        
 
-      
-    }
 
     React.useEffect(()=>{
         setPost(currentUser.posts.find(post=>post.postId===postId))
@@ -73,9 +68,10 @@ interface PostMenuProps{
             'aria-labelledby': 'basic-button',
             }}
         >
-            <MenuItem onClick={handleEditClick}><span>Edit</span> <FontAwesomeIcon icon={faEdit}/></MenuItem>
-            <MenuItem onClick={handleDeleteClick}><span>Delete</span><FontAwesomeIcon icon={faTrash}/></MenuItem>
-            {/* <MenuItem onClick={handleClose}>Logout</MenuItem> */}
+                    <div className="">
+                    <MenuItem onClick={handleEditClick}><span className='mx-2'>Edit </span> <FontAwesomeIcon icon={faEdit}/></MenuItem>
+                    <MenuItem onClick={()=>{deletePost(post!.postId);setAnchorEl(null)}}><span className='mx-2'>Delete </span><FontAwesomeIcon icon={faTrash}/></MenuItem>
+                    </div>
         </Menu>
 
             <Dialog

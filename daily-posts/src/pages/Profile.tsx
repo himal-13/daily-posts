@@ -9,7 +9,7 @@ import PostMenu from "../components/PostMenu"
 import EditProfile from "../components/EditProfile"
 
 const Profile = () => {
-    const{likePost,createPost,currentUser} = useUserContext()
+    const{likePost,createPost,currentUser,followList} = useUserContext()
     const[postContent,setPostContent] = useState('')
 
     useEffect(()=>{
@@ -39,7 +39,8 @@ const Profile = () => {
                     <h3 className=""><FontAwesomeIcon icon={faUser} className="text-5xl rounded-full bg-slate-400 overflow-hidden"/></h3>
                     <h3 className="font-semibold text-2xl">{currentUser.name}</h3>
                     <h3 className="text-xl">{currentUser.username}</h3>
-                    <h4>{currentUser.bio}</h4>
+                    <h3>{followList.length} following</h3>
+                    <h4 className="">{currentUser.bio}</h4>
                     <EditProfile/>
                     
                 </section>
@@ -55,7 +56,7 @@ const Profile = () => {
                                     
                                 <h3 className=" flex items-center gap-2 text-xl"> <section className="rounded-full h-[40px] w-[40px] bg-slate-300 flex justify-center items-center ">
                                 <FontAwesomeIcon icon={faUser} className="text-2xl"/></section><span>{currentUser.name}</span></h3>
-                                <PostMenu postId={post.postId}/>
+                                <PostMenu postId={post.postId} />
                                 </div>
                             <section className="flex-col">
                             <p className="my-2 text-2xl font-thin">{post.content}</p>

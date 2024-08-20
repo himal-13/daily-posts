@@ -6,6 +6,7 @@ import { UserProvider } from './utils/Context.tsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Profile from './pages/Profile.tsx'
 import ExplorePage from './pages/Explore.tsx'
+import UserPage from './pages/UserPage.tsx'
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path:'/explore',
     element:<ExplorePage/>
+  },
+  {
+    path:"user/:userName",
+    element:<UserPage/>
   }
 ])
 
