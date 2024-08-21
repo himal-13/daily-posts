@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useContext,  useState } from "react"
 import { defaultAdminUser, Post, User } from "./interfaces"
-import { usersDetails } from "./UserDetails"
+import { usersDetails } from "./UserDetails.ts"
 
 
 
