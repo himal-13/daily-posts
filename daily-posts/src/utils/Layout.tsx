@@ -14,7 +14,7 @@ const Layout = ({children}:{children:ReactNode}) => {
         <main className="ml-0 sm:ml-[29vw] xl:border-r-2 xl:border-gray-300 ">
         {children}
         </main>
-        <aside className="fixed top-[1vh] px-[5vw] left-[70vw] hidden xl:block mx-auto p-3 border-2 border-gray-300 h-[90vh] overflow-hidden">
+        <aside className="fixed pt-[1vh] top-0 px-[5vw] left-[70vw] hidden xl:block mx-auto p-3  h-[90vh] overflow-y-scroll ">
           <AsideComp/>
         </aside>
         <div className="fixed bottom-4 xl:left-[65vw]  left-[80vw]">

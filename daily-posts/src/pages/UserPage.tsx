@@ -10,7 +10,7 @@ import { Divider } from "@mui/material"
 const UserPage = () => {
     const{usersData,likePost,addToFollowList,removeFromFollowList,followList} = useUserContext()
     const[currentUser,setCurrentUser]= useState<User>( )
-    const[isFollowed,setIsFollowed]= useState<boolean>()//followList.map(list=>list.id).includes(currentUser!.id)
+    const[isFollowed,setIsFollowed]= useState<boolean>()
     const params = useParams();
 
 

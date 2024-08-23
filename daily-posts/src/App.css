@@ -29,9 +29,24 @@ nav h3:hover{
     color: blue;
     opacity: 1;
 }
-.searched-items::-webkit-scrollbar{
-    display: none;
-}
+::-webkit-scrollbar {
+    width: 8px;  
+    height: 8px; 
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px; 
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 10px; 
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
 
 @media screen and (max-width:900px){
 
